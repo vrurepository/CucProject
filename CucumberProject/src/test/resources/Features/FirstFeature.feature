@@ -1,18 +1,25 @@
 #Author: your.email@your.domain.com
 #Keywords Summary :
+#Feature: Test the login functionality of Facebook application
+#Scenario: Test the valid login
+#Given User is on login page
+#When User enters "vrushketh_akre@yahoo.com" and "Nagpur123#"
+#And Click on login button
+#Then User should land on login page
 Feature: Test the login functionality of Facebook application
-Scenario: Test the valid login
-Given User is on login page
-When User enters UserName and Password
-And Click on login button
-Then User should land on login page
 
+  Scenario Outline: Test the valid login2
+    Given User is on login page
+    When User enters <userName> and <password>
+    And Click on login button
+    Then User should land on login page
 
-Scenario: Test the valid login2
-Given User is on login page
-When User enters UserName and Password
-And Click on login button
-Then User should land on login page
+    Examples: 
+      | userName                 | password   |
+      | vrushketh_akre@yahoo.com | Nagpur123# |
+      | vrushketh_akre@yahoo.com | Nagpur123$ |
+      
+      
 #And,But: To enumerate more Given,When,Then steps
 #Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
 #Examples: Container for s table
@@ -24,4 +31,3 @@ Then User should land on login page
 #""
 ## (Comments)
 #Sample Feature Definition Template
-

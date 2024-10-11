@@ -25,12 +25,20 @@ public class LoginSteps {
 
 	
 	
-	  @When("User enters UserName and Password") public void
-	  user_enters_user_name_and_password() {
-	  System.out.println("Step2 : User enters Username and Password");
-	  driver.findElement(By.id("email")).sendKeys("vrushketh_akre@yahoo.com");
-	  driver.findElement(By.id("pass")).sendKeys("Nagpur123#"); }
+	
+	/*
+	 * @When("User enters \"(.*)\" and \"(.*)\"$") public void
+	 * user_enters_user_name_and_password(String uname, String pswd) {
+	 * System.out.println("Step2 : User enters Username and Password");
+	 * driver.findElement(By.id("email")).sendKeys(uname);
+	 * driver.findElement(By.id("pass")).sendKeys(pswd); }
+	 */
 	 
+	  @When("^User enters (.*) and (.*)$") 
+	  public void user_enters_user_name_and_password(String uname, String pswd) {
+	  System.out.println("Step2 : User enters Username and Password");
+	  driver.findElement(By.id("email")).sendKeys(uname);
+	  driver.findElement(By.id("pass")).sendKeys(pswd); }
 
 	@And("Click on login button")
 	public void click_on_login_button() {
@@ -41,7 +49,8 @@ public class LoginSteps {
 	
 	  @Then("User should land on login page") public void
 	  user_should_land_on_login_page() {
-	  System.out.println("Step4 : User lands on homepage"); driver.close();
+	  System.out.println("Step4 : User lands on homepage"); 
+	  driver.quit();;
 	  
 	  }
 	 
