@@ -6,20 +6,22 @@
 #When User enters "vrushketh_akre@yahoo.com" and "Nagpur123#"
 #And Click on login button
 #Then User should land on login page
-Feature: Test the login functionality of Facebook application
 
+  Feature: Test the login functionality of Facebook application
   Scenario Outline: Test the valid login2
-    Given User is on login page
-    When User enters <userName> and <password>
-    And Click on login button
-    Then User should land on login page
+   Given User is on login page
+  When User enters <userName> and <password>
+  And Click on login button
+  Then User should land on login page
+  Examples:
+   | userName                 | password   |
+   | vrushketh_akre@yahoo.com | Nagpur123# |
+   | vrushketh_akre@yahoo.com | Nagpur123$ |
+  
 
-    Examples: 
-      | userName                 | password   |
-      | vrushketh_akre@yahoo.com | Nagpur123# |
-      | vrushketh_akre@yahoo.com | Nagpur123$ |
-      
-      
+    
+    
+    
 #And,But: To enumerate more Given,When,Then steps
 #Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
 #Examples: Container for s table
