@@ -3,7 +3,7 @@
 #Feature: Test the login functionality of Facebook application
 #Scenario: Test the valid login
 #Given User is on login page
-#When User enters "vrushketh_akre@yahoo.com" and "Nagpur123#"
+#When User enters "@yahoo.com" and ""
 #And Click on login button
 #Then User should land on login page
 
@@ -15,8 +15,8 @@
   Then User should land on login page
   Examples:
    | userName                 | password   |
-   | vrushketh_akre@yahoo.com | Nagpur123# |
-   | vrushketh_akre@yahoo.com | Nagpur123$ |
+   | *** | *** |
+   |*** | *** |
   
 
     
